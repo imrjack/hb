@@ -1,0 +1,453 @@
+@font-face {
+    font-family: 'liberation_sansregular';
+    src: url('../fonts/liberationsans_regular_macroman/LiberationSans-Regular-webfont.eot');
+    src: url('../fonts/liberationsans_regular_macroman/LiberationSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/liberationsans_regular_macroman/LiberationSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/liberationsans_regular_macroman/LiberationSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/liberationsans_regular_macroman/LiberationSans-Regular-webfont.svg#liberation_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'liberationsans_bold_macroman';
+    src: url('../fonts/liberationsans_bold_macroman/LiberationSans-Bold-webfont.eot');
+    src: url('../fonts/liberationsans_bold_macroman/LiberationSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/liberationsans_bold_macroman/LiberationSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/liberationsans_bold_macroman/LiberationSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/liberationsans_bold_macroman/LiberationSans-Bold-webfont.svg#liberation_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'liberationsans_italic_macroman';
+    src: url('../fonts/liberationsans_italic_macroman/LiberationSans-Italic-webfont.eot');
+    src: url('../fonts/liberationsans_italic_macroman/LiberationSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/liberationsans_italic_macroman/LiberationSans-Italic-webfont.woff') format('woff'),
+         url('../fonts/liberationsans_italic_macroman/LiberationSans-Italic-webfont.ttf') format('truetype'),
+         url('../fonts/liberationsans_italic_macroman/LiberationSans-Italic-webfont.svg#liberation_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+	line-height:1.6em;
+	font-family: 'liberation_sansregular', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Osaka', serif;
+	color: #252525;
+	font-size:12px;
+}
+
+h3{
+	font-size:105%;	
+	font-weight:bold;
+	line-height:1.8em;
+}
+
+a{
+	color: #646363;
+	text-decoration: none;
+}
+a:hover{
+	color:#f36f32;
+}
+
+ul{
+	margin: 0;
+	padding: 0;	
+}
+
+/* etc
+--------------------------------*/
+.clearfix{
+	clear: both;
+	line-height:0px;
+	height:0px;
+	font-size:0px;
+	overflow:hidden;
+}
+
+/* header
+--------------------------------------*/
+#header {
+	/*position: fixed;*/
+	text-align: center;
+	/*top:0px;*/
+	width:100%;
+	height:auto;
+	padding: 20px 0 0px;
+	background-color: #fff;
+	z-index: 999;
+}
+
+#header #logo{
+	width:955px;
+	margin:10px auto 0;
+}
+#header #logo a{
+	display:block;
+	width:323px;
+	height:25px;
+	margin: 0 auto;
+	text-indent: -9999px;
+	background: url( ../img/common/logo.png ) no-repeat;
+}
+#header #nav{
+	margin:25px auto 0;
+	padding-top:2px;
+	height:53px;
+	line-height:53px;
+	/*background-color: #f36f32;*/
+	/*border-top:5px solid #9e9a99;*/
+	border-bottom: 1px solid #170d0c;
+	width:955px;
+	background: url( ../img/common/line.gif ) top repeat-x;
+}
+
+#header #nav ul{
+	width:955px;
+	margin:0 auto;
+}
+#header #nav li{
+	display: inline-block;
+}
+#header #nav li.nav_onlinestore{
+	font-weight:bold;
+}
+
+#header #nav li a{
+	display:inline-block;
+	margin:0 12px;
+	color:#333;
+	text-decoration: none;
+	font-size:120%;
+	font-family: 'liberationsans_italic_macroman';
+}
+#header #nav li a:hover{
+	color:#f5d74c;
+}
+#header #nav li.active a{
+	background: url( ../img/common/arrow_menu.png ) no-repeat 50% bottom;
+}
+#header #nav li a:hover{
+	text-decoration: none;
+}
+
+
+/* footer
+--------------------------------------*/
+#footer{
+	text-align: center;
+	width:955px;
+	margin: 15px auto 0;
+}
+#footer #top_wrapper{
+	border-top: 1px solid #170d0c;
+	padding-top:30px;
+	/*border-bottom: 1px solid #c0c0c0;*/
+}
+
+#footer #link{
+	position: relative;
+	/*border-top:5px solid #9e9a99;*/
+	text-align: left;
+	padding: 40px 30px 50px;
+	background: url( ../img/common/line_footer.gif ) top repeat-x;
+}
+#footer #link .wrap_link{
+	text-align:center;
+	margin:0 auto;	
+}
+#footer #link ul{
+	display: inline-block;
+	margin:20px auto 0px;
+	vertical-align: top;
+}
+#footer #link ul.left{
+	width:330px;
+}
+#footer #link ul.right{
+	width:360px;
+}
+
+#footer #link ul li{
+	text-align:left;
+	line-height:3em;
+	text-indent:27px;
+	background: url( ../img/common/link.gif ) no-repeat left 50%;
+}
+#footer #link h2{
+	line-height:28px;
+	font-size:28px;
+	color:#2aa6c0;
+	font-weight: bold;
+	font-family: 'liberationsans_italic_macroman';
+}
+#footer #link div.btn_pagetop{
+	position: absolute;
+	top:4px;
+	right:0;
+
+}
+#footer #link div.btn_pagetop a{
+	display: block;
+	text-indent: -9999px;
+	width:60px;
+	height:55px;
+	background: url( ../img/common/pagetop.gif ) no-repeat 50% 50%;
+}
+
+
+#footer #top{
+	width:955px;
+	margin:0 auto;
+}
+#footer #top {
+}
+#footer #top ul{
+	margin:0;
+}
+#footer #top ul li{
+	display: inline-block;
+	padding:15px 20px;
+}
+#footer #top ul li a{
+	display: block;
+	text-indent: -9999px;
+}
+
+#footer #top ul li.btn_facebook{
+	width:55px;
+	padding-right:0px;
+}
+#footer #top ul li.btn_facebook a{
+	width:56px;
+	height:56px;
+	background: url( ../img/common/footer_fb.png ) no-repeat;
+}
+#footer #top ul li.btn_instagram{
+	width:56px;
+	padding-left:15px;
+	padding-right:0px;
+}
+#footer #top ul li.btn_instagram a{
+	width:56px;
+	height:56px;
+	background: url( ../img/common/footer_insta.png ) no-repeat;
+}
+
+#footer #bottom{
+	margin: 10px auto 40px;
+	font-size: 90%;
+}
+
+/* 
+--------------------------------------*/
+.container{
+	width: 955px;
+	margin:0 auto 25px;
+	padding:0;
+}
+
+/* top
+--------------------------------------*/
+.wrap_top{
+	margin-top:20px;
+}
+.wrap_top .main_banner{
+	text-align: center;
+}
+
+.wrap_top .banner_bottom{
+	text-align: center;
+	width:955px;
+	margin-top:15px;
+	border-top: 1px solid #170d0c;
+	padding:15px 0 0;
+}
+.wrap_top .banner_bottom ul{
+}
+.wrap_top .banner_bottom ul li{
+	display:inline-block;
+	vertical-align: top;
+	width:311px;
+	list-style: none;
+	margin-right:7px;
+}
+.wrap_top .banner_bottom ul li:last-child{
+	margin-right:0px;
+}
+.wrap_top .banner_bottom ul li a{
+	color:#484747;
+}
+.wrap_top .banner_bottom ul li h3{
+	text-align:center;
+	margin-bottom: 3px;
+	color: #f26f2a;
+	font-size:120%;
+	font-weight:normal;
+	font-family: 'liberationsans_italic_macroman';
+}
+
+.wrap_top .banner_bottom ul li.bnr_waka{
+	height:340px;
+	overflow: hidden;
+	padding:5px 0px 5px;
+	background-color: #e6e4e5;
+}
+.wrap_top .banner_bottom ul li.bnr_waka h3{
+	margin-top:23px;
+}
+.wrap_top .banner_bottom ul li.bnr_waka h3 a{
+	color:#46464;
+	text-decoration: underline;
+}
+
+.wrap_top .banner_bottom ul li.bnr_ambassadors{
+	height:340px;
+	overflow: hidden;
+	padding:5px 0px 5px;
+	background-color: #e6e4e5;
+}
+.wrap_top .banner_bottom ul li.bnr_ambassadors h3{
+	margin-top:18px;
+	line-height:1.3em;
+}
+.wrap_top .banner_bottom ul li.bnr_ambassadors h3 a{
+	color:#464646;
+	text-decoration: underline;
+}
+
+.wrap_top .banner_bottom ul li.bnr_right{
+	height:349px;
+	overflow: hidden;
+}
+.wrap_top .banner_bottom ul li.bnr_right ul li{
+	height:85px;
+	margin-bottom:3px;
+}
+
+.wrap_top #about{
+	border-top: 1px solid #170d0c;
+	text-align: left;
+	margin-top:15px;
+	padding: 40px 30px 30px;
+}
+.wrap_top #about h2{
+	line-height:28px;
+	font-size:28px;
+	color:#2aa6c0;
+	font-family: 'liberationsans_italic_macroman';
+	font-weight: bold;
+}
+
+.wrap_top #about .map_block{
+	margin-top:30px;
+	text-align: center;
+	background: url( ../img/common/line_dotted.png ) center repeat-y;
+}
+
+.wrap_top #about .storeblock{
+	display: inline-block;
+	text-align: left;
+	width:300px;
+	margin:0 20px;
+	padding:20px;
+	background-color: #f3f1f2;
+}
+
+.wrap_top #about .storeblock .top{
+	position: relative;
+	width:305px;
+	line-height:1.7em;
+	color:#6d6d6d;
+	font-size:95%;
+}
+.wrap_top #about .storeblock .top .pic_store{
+	position: absolute;
+	bottom:0px;
+}
+.wrap_top #about .storeblock .top h4{
+	color:#5F5D5D;
+	font-size:110%;
+	font-weight:bold;
+	margin-bottom:7px;
+}
+.wrap_top #about .storeblock .bottom{
+	margin-top:15px;
+	width:300px;
+}
+.wrap_top #about .storeblock .bottom .map{
+	width:300px;
+	height:300px;
+}
+
+.wrap_top #about .map{
+	width:300px;
+	height:300px;
+}
+
+.wrap_top .banner_bottom .right ul li.btn_instagram a{
+	background: url( ../img/top/ico_instagram.gif ) no-repeat;
+}
+.wrap_top .banner_bottom .right ul li.btn_youtube a{
+	background: url( ../img/top/ico_youtube.gif ) no-repeat;
+}
+.wrap_top .banner_bottom .right ul li.btn_facebook a{
+	background: url( ../img/top/ico_fb.gif ) no-repeat;
+}
+
+/* brands
+--------------------------------------*/
+.wrap_brands{
+	margin-top:20px;
+	margin-bottom:55px;
+}
+.wrap_brands .brand_block{
+	width:750px;
+	margin:40px auto 0px;
+}
+.wrap_brands .brand_block h2{
+	line-height:20px;
+	font-size:20px;
+	font-family: 'liberationsans_italic_macroman';
+}
+.wrap_brands .brand_block .description{
+	line-height:1.4em;
+	margin-top:10px;
+}
+.wrap_brands .brand_block .description h3{
+	font-family: 'liberationsans_italic_macroman';
+	font-weight:normal;
+	font-size:105%;
+}
+
+.wrap_brands .brand_block ul{
+	width:700px;
+	margin:15px auto;
+}
+.wrap_brands .brand_block ul li .note{
+	text-align: right;
+}
+
+/* under construction
+--------------------------------------*/
+.wrap_construction{
+	text-align: center;
+	padding:60px 50px 50px;
+}
+.wrap_construction h2{
+	line-height:28px;
+	font-size:28px;
+	color:#2aa6c0;
+color:#9e9a99;
+	font-family: 'liberationsans_italic_macroman';
+}
+
+
+/* etc
+--------------------------------------*/
+.pager{
+	margin:20px auto 30px;
+	text-align: center;
+}

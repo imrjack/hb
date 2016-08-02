@@ -1,0 +1,133 @@
+<?php
+//--------------------------------------------------------------------------------------------------
+// Module Name : 
+//.File Name   : brands/index.php
+//.Description : HBNY　BRANDS画面
+// @author	HiroshiTanaka
+// @create	2014/03/08
+// @Maintenance Date: 20YY/MM/DD    : Reason
+//--------------------------------------------------------------------------------------------------
+//                  Maintenance History
+//  Rev.   Date           Reason              Comment
+//  1.0.0  2012/03/23     新規作成
+//--------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+// インクルード
+require_once('../inc/func.std.html.php');
+
+//--------------------------------------------------------------------------------------------------
+// 認証
+
+//--------------------------------------------------------------------------------------------------
+// 宣言部
+//--------------------------------------------------------------------------------------------------
+// 変数宣言とREQUESTデータ取得
+$cat = $_REQUEST['cat'];
+$pageTitle = 'BRANDS Highbridge New York Inc.';
+
+//--------------------------------------------------------------------------------------------------
+// メイン処理部
+//--------------------------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+//　javascript設定
+
+$rootDir = ROOT_DIR;
+
+$otherStr = <<< EOF
+<script type="text/javascript" src="{$rootDir}js/jquery.bxslider/jquery.bxslider.js"></script>
+<link href="{$rootDir}js/jquery.bxslider/jquery.bxslider_brands.css" rel="stylesheet" />
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#brand_waka_slider').bxSlider({
+		mode:'horizontal'
+		,speed:750
+		,pager:false
+		,controls:true
+		,auto:false
+		,pause:6000
+		,responsive:false
+	});
+
+	$('#brand_amb_slider').bxSlider({
+		mode:'horizontal'
+		,speed:750
+		,pager:false
+		,controls:true
+		,auto:false
+		,pause:6000
+		,responsive:false
+	});
+
+});
+</script>
+
+EOF;
+
+
+//------------------------------------------------------------------------------
+//　画面表示処理
+?>
+<?=getHeaderHtml( $pageTitle, $otherStr );?>
+<body>
+
+	<?=getGlobalNaviHtml();?>
+	</div><!-- #header -->
+
+	<div class="container">
+		<div class="wrap_brands">
+
+		<div id="amb" class="brand_block amb">
+			<h2>Amb Ambassadors of minimalism</h2>
+			<div class="description">
+<h3>2016 Spring&amp;Summer</h3>
+Amb Ambassadors of minimalism is an original footwear label of Highbridge International, established in 2008.<br /> 
+The collection expands from our classic style sneakers for men’s and women’s. Manufactured in Portugal.<br />
+We focus on “fashionable minimal design”, “quality of material&amp;construction”, “comfort&amp;functionality”.<br />
+WEBSITE : <a href="http://www.amb-tokyo.com" target="_blank">amb-tokyo.com</a>
+			</div>
+			<ul id="brand_amb_slider">
+				<li><img src="<?=ROOT_DIR?>img/brands/amb/image01.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/amb/image02.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/amb/image03.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/amb/image04.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/amb/image05.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/amb/image06.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/amb/image07.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/amb/image08.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/amb/image09.jpg" /></li>
+			</ul>
+		</div>
+ 
+ 		<div id="waka" class="brand_block waka">
+			<h2>WAKA TAKAHASHI</h2>
+			<div class="description">
+WAKA TAKAHASHI is a women’s handbag brand established in New York City by a Japanese designer with A/W 2016 collection.
+Each piece is sophisticatedly crafted in Italy.<br />
+			</div>
+			<ul id="brand_waka_slider">
+				<li><img src="<?=ROOT_DIR?>img/brands/waka/image01.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/waka/image02.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/waka/image05.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/waka/image06.jpg" /></li>
+				<li><img src="<?=ROOT_DIR?>img/brands/waka/image07.jpg" /></li>
+			</ul>
+		</div>
+
+		</div><!-- /.wrap -->
+	</div><!-- /.container -->
+
+	<?=getFooterHtml();?> 
+
+</body>
+</html>
+
+<?php
+//--------------------------------------------------------------------------------------------------
+// ↓以降ファイル内プライベート関数群
+//--------------------------------------------------------------------------------------------------
+
+?>
+
