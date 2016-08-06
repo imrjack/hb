@@ -46,7 +46,7 @@ $(document).ready(function(){
 		,speed:750
 		,pager:false
 		,controls:false
-		,auto:false
+		,auto:true
 		,randomStart:true
 		,pause:6000
 		,responsive:false
@@ -78,11 +78,11 @@ EOF;
 <?=getHeaderHtml( $pageTitle, $otherStr );?>
 <body onLoad="initializeMap('newyork');initializeMap('tokyo');">
 
+	<div class="container">
 	<?=getGlobalNaviHtml();?>
 	</div><!-- #header -->
 
-	<div class="container">
-		<div class="wrap_top">
+<!-- 		<div class="wrap_top">
 		
 		<div class="main_banner">
 			<ul id="top_slider">
@@ -159,11 +159,11 @@ E-MAIL: info@highbridge.co.jp<br />
 
 		</div>
 
-		</div><!-- /.wrap -->
-	</div><!-- /.container -->
+		</div><!-- /.wrap --> 
 
 	<?=getFooterHtml();?> 
 
+	</div><!-- /.container -->
 </body>
 </html>
 

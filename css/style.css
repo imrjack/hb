@@ -81,32 +81,20 @@ ul{
 }
 
 #header #logo{
-	width:955px;
+	/*width:955px;*/
 	margin:10px auto 0;
+	float:left;
 }
 #header #logo a{
 	display:block;
 	width:323px;
 	height:25px;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	text-indent: -9999px;
 	background: url( ../img/common/logo.png ) no-repeat;
 }
 #header #nav{
-	margin:25px auto 0;
-	padding-top:2px;
-	height:53px;
-	line-height:53px;
-	/*background-color: #f36f32;*/
-	/*border-top:5px solid #9e9a99;*/
-	border-bottom: 1px solid #170d0c;
-	width:955px;
-	background: url( ../img/common/line.gif ) top repeat-x;
-}
-
-#header #nav ul{
-	width:955px;
-	margin:0 auto;
+	margin:10px 0;
 }
 #header #nav li{
 	display: inline-block;
