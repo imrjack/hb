@@ -18,9 +18,10 @@ $retStr = <<< EOF
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="{$rootDir}img/favicon.ico">
 	<title>{$title}</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<link href="{$rootDir}css/reset.css" rel="stylesheet">
 	<link href="{$rootDir}css/style.css" rel="stylesheet">
+	<link href="{$rootDir}css/new-style.css" rel="stylesheet">	
 	<script src="{$rootDir}js/jquery.fademover/jquery.fademover.js"></script>
 	{$otherStr}
 
@@ -80,6 +81,8 @@ $rootDir = ROOT_DIR;
 		$activeBrands = ' active ';
 	}elseif( strstr( $_SERVER['REQUEST_URI'], 'news' ) ){
 		$activeNews = ' active ';
+	}elseif( strstr( $_SERVER['REQUEST_URI'], $topUrl ) ){
+		$activeAbout = ' active ';
 	}elseif( strstr( $_SERVER['REQUEST_URI'], 'stocklists' ) ){
 		$activeStocklists = ' active ';
 	}elseif( strstr( $_SERVER['REQUEST_URI'], 'storeonline' ) ){
@@ -90,7 +93,7 @@ $rootDir = ROOT_DIR;
 	}
 	
 $retStr = <<< EOF
-	<div id="header">
+	<div class='container' id="header">
 		<div id="logo">
 			<a href="{$rootDir}">Highbridge New York Inc.</a>
 		</div>	
@@ -98,12 +101,15 @@ $retStr = <<< EOF
 		<div id="nav">
 			<ul>
 				<li class="nav_collection {$activeAbout}"><a href="{$topUrl}#about">ABOUT</a></li>
-				<li class="nav_about {$activeBrands}"><a href="{$rootDir}brands/">BRANDS</a></li>
+				<li class="dropdown nav_about {$activeBrands}">BRANDS
+					<ul class='sub-menu'>
+						<li> <a href="{$rootDir}brands/amb.php"> AMB </a></li>
+						<li> <a href="{$rootDir}brands/waka.php"> Waka Takahashi </a></li>
+					</ul> 
+				</li>
 				<li class="nav_news {$activeNews}"><a href="{$rootDir}news/">NEWS</a></li>
-				<li class="nav_stocklists {$activeStocklists}"><a href="{$rootDir}stocklists/">STOCKISTS</a></li>
-				<li class="nav_link {$activeLink}"><a href="{$topUrl}#link">LINK</a></li>
+				<li class="nav_stocklists {$activeStocklists}"><a href="{$rootDir}stocklists/">STOCKLISTS</a></li>
 				<li class="nav_contact {$activeContact}"><a href="mailto:info@highbridge-ny.com">CONTACT</a></li>
-				<li class="nav_onlinestore {$activeStoreonlise}"><a href="{$rootDir}storeonline/">STORE ONLINE</a></li>
 			</ul>
 		</div>
 
@@ -119,21 +125,6 @@ $year = date('Y', time());
 
 $retStr = <<< EOF
 	<div id="footer">
-		<div id="link">
-			<h2>LINK</h2>
-			<div class="wrap_link">
-				<ul class="left">
-					<li><a href="" target="_blank">HIGHBRIDGE INTERTNATIONAL WEBSITE</a></li>
-				</ul>
-				<ul class="right">
-					<li><a href="http://highbridge-online.com/" target="_blank">HIGHBRIDGE INTERTNATIONAL ONLINE STORE(JAPAN)</a></li>
-					<li><a href="" target="_blank">HIGHBRIDGE NEW YORK ONLINE STORE(USA))</a></li>
-				</ul>
-			</div>			
-			<div class="btn_pagetop"><a href="#header">PAGE TOP</a></div>
-
-		</div>
-
 		<div id="top_wrapper">
 			<div id="top">
 				<ul>
@@ -160,3 +151,50 @@ function reqEsc( $value )
 }
 
 ?>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('.dropdown' ).hover(
+        function(){
+            $(this).children('.sub-menu').slideDown(200);
+        },
+        function(){
+            $(this).children('.sub-menu').slideUp(200);
+        }
+    );
+    // console.log($('.sub-menu li'))
+    // $('.sub-menu li a').on('click',function(event){
+    // 	var url = $(this)['context'].href;
+    // 	console.log(url);
+
+    // 	// window.location.replace(url);
+    // 	// return true;
+    // })
+});
+</script>
+<script>
+	var $img_open = false;
+	function enlarge(el){
+		$(el).on('click',function(){
+				$img_open = true
+				var $div = $('<div>',{id:'enlarge_img'});
+				var $closeX = $('<div>',{id:'closeX', a:'#'});
+				$closeX.text('X');
+				var $op = $('<div>',{id:'op'});
+				$('.image-container').append($div);
+				$closeX.appendTo('#enlarge_img');
+				var $img = $(this).clone().appendTo('#enlarge_img');
+				$op.appendTo('body');
+				console.log($img_open)
+		
+				$('#closeX').click(function(){
+					console.log($(this));
+					$(this).parent().remove();
+					$op.remove();
+				})
+			})
+	}
+	$(function(){
+			enlarge('.image-wrapper img')
+	});
+</script>
