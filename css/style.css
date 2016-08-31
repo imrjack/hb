@@ -73,7 +73,7 @@ ul{
 	/*position: fixed;*/
 	text-align: center;
 	/*top:0px;*/
-	width:100%;
+	/*width:100%;*/
 	height:auto;
 	padding: 20px 0 0px;
 	background-color: #fff;
@@ -82,7 +82,7 @@ ul{
 
 #header #logo{
 	/*width:955px;*/
-	margin:10px auto 0;
+	/*margin:10px auto 0;*/
 	float:left;
 }
 #header #logo a{
@@ -114,8 +114,9 @@ ul{
 #header #nav li a:hover{
 	color:#f5d74c;
 }
-#header #nav li.active a{
-	background: url( ../img/common/arrow_menu.png ) no-repeat 50% bottom;
+#header #nav li.active > a{
+	/*background: url( ../img/common/arrow_menu.png ) no-repeat 50% bottom;*/
+	border-bottom: solid;
 }
 #header #nav li a:hover{
 	text-decoration: none;
@@ -130,7 +131,7 @@ ul{
 	margin: 15px auto 0;
 }
 #footer #top_wrapper{
-	border-top: 1px solid #170d0c;
+	/*border-top: 1px solid #170d0c;*/
 	padding-top:30px;
 	/*border-bottom: 1px solid #c0c0c0;*/
 }
@@ -232,7 +233,7 @@ ul{
 /* 
 --------------------------------------*/
 .container{
-	width: 955px;
+	width: 1170px;
 	margin:0 auto 25px;
 	padding:0;
 }
@@ -392,17 +393,19 @@ ul{
 	margin-bottom:55px;
 }
 .wrap_brands .brand_block{
-	width:750px;
+	/*width:750px;*/
 	margin:40px auto 0px;
 }
-.wrap_brands .brand_block h2{
-	line-height:20px;
-	font-size:20px;
-	font-family: 'liberationsans_italic_macroman';
+#amb > h3, #amb > p, #waka > h3, #waka > .description p{
+	/*line-height:20px;*/
+	/*font-size:20px;*/
+	/*font-family: 'liberationsans_italic_macroman';*/
+	display:inline;
 }
 .wrap_brands .brand_block .description{
-	line-height:1.4em;
+	/*line-height:1.4em;*/
 	margin-top:10px;
+	display:inline;
 }
 .wrap_brands .brand_block .description h3{
 	font-family: 'liberationsans_italic_macroman';
@@ -411,7 +414,7 @@ ul{
 }
 
 .wrap_brands .brand_block ul{
-	width:700px;
+	/*width:700px;*/
 	margin:15px auto;
 }
 .wrap_brands .brand_block ul li .note{
