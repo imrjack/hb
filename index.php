@@ -80,7 +80,28 @@ EOF;
 
 	<div class="container">
 	<?=getGlobalNaviHtml();?>
-	</div><!-- #header -->
+	</div>
+	<div class = "top-container">
+		<div class="top-wrap">
+			<div class="top-pic-lg" style="background-image: url('<?=ROOT_DIR?>img/2016/top_img_1.jpg')">
+			</div>
+			<div class="top-pic-sm">
+				<!-- <img width="100%" src="<?=ROOT_DIR?>img/2016/top_img_1.jpg"/> -->
+			</div>
+			<div class="top-pic-sm">
+				<!-- <img width="100%" src="<?=ROOT_DIR?>img/2016/top_img_1.jpg"/> -->
+			</div>
+			<div class="top-pic-lg" style="background-image: url('<?=ROOT_DIR?>img/2016/top_img_2.jpg')">
+				<!-- <img width="100%" src="<?=ROOT_DIR?>img/2016/top_img_1.jpg"/> -->
+			</div>	
+		</div>	
+	</div>
+
+	<?=getFooterHtml();?> 
+</body>
+
+
+	<!-- #header -->
 
 <!-- 		<div class="wrap_top">
 		
@@ -161,10 +182,7 @@ E-MAIL: info@highbridge.co.jp<br />
 
 		</div><!-- /.wrap --> 
 
-	<?=getFooterHtml();?> 
 
-	</div><!-- /.container -->
-</body>
 </html>
 
 <?php
