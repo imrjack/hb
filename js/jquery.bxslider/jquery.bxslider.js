@@ -9,7 +9,6 @@
  */
 
 ;(function($){
-	console.log('#@#@$@#$!@$!@%_')
 	var plugin = {};
 
 	var defaults = {
