@@ -22,12 +22,14 @@ $rootDir = ROOT_DIR;
 		<div class="wrap_brands">
 
 			<div id="amb" class="brand_block amb">
-				<h3>WAKA TAKAHASHI</h3>
-				<p>is a women's handbag brand established in New York City by a Japanese designer with A/W 2016 collection. Each piece is sophisticatedly crafted in Italy</p>
+				<div style="padding-left:7px;">
+					<h3>WAKA TAKAHASHI</h3>
+					<p>is a women's handbag brand established in New York City by a Japanese designer with A/W 2016 collection. Each piece is sophisticatedly crafted in Italy</p>
+				</div>
 				<div class='image-container'>
 				<?php 
-					foreach($images as $img=>$value){
-						echo '<div class=image-wrapper>' . '<img class=images id=img_'.$img.' src='.'http://placehold.it/350x450' .' />' . '</div>';
+					foreach($images as $img){
+						echo '<div class=image-wrapper>' . '<img class=images src='.$rootDir.$img .' />' . '</div>';
 					};
 				?>
 				</div>

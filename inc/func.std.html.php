@@ -13,7 +13,7 @@ $retStr = <<< EOF
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=975" />
+	<meta name="viewport" content="width=1170" />
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="{$rootDir}img/favicon.ico">
@@ -77,20 +77,20 @@ $rootDir = ROOT_DIR;
 	
 	$topUrl = $rootDir;
 
-	if( strstr( $_SERVER['REQUEST_URI'], 'brands' ) ){
-		$activeBrands = ' active ';
-	}elseif( strstr( $_SERVER['REQUEST_URI'], 'news' ) ){
-		$activeNews = ' active ';
-	}elseif( strstr( $_SERVER['REQUEST_URI'], $topUrl ) ){
-		$activeAbout = ' active ';
-	}elseif( strstr( $_SERVER['REQUEST_URI'], 'stocklists' ) ){
-		$activeStocklists = ' active ';
-	}elseif( strstr( $_SERVER['REQUEST_URI'], 'storeonline' ) ){
-		$activeStoreonlise = ' active ';
-	}else{
-		$activeTop = ' active ';
-		$topUrl = '';
-	}
+	// if( strstr( $_SERVER['REQUEST_URI'], 'brands' ) ){
+	// 	$activeBrands = ' active ';
+	// }elseif( strstr( $_SERVER['REQUEST_URI'], 'news' ) ){
+	// 	$activeNews = ' active ';
+	// }elseif( strstr( $_SERVER['REQUEST_URI'], $topUrl ) ){
+	// 	$activeAbout = ' active ';
+	// }elseif( strstr( $_SERVER['REQUEST_URI'], 'stocklists' ) ){
+	// 	$activeStocklists = ' active ';
+	// }elseif( strstr( $_SERVER['REQUEST_URI'], 'storeonline' ) ){
+	// 	$activeStoreonlise = ' active ';
+	// }else{
+	// 	$activeTop = ' active ';
+	// 	$topUrl = '';
+	// }
 	
 $retStr = <<< EOF
 	<div class='container' id="header">
@@ -100,16 +100,16 @@ $retStr = <<< EOF
 
 		<div id="nav">
 			<ul>
-				<li class="nav_collection {$activeAbout}"><a href="{$topUrl}#about">ABOUT</a></li>
-				<li class="dropdown nav_about {$activeBrands}">BRANDS
+				<li class="nav_collection"><a href="{$topUrl}#about">ABOUT</a></li>
+				<li class="dropdown nav_about">BRANDS
 					<ul class='sub-menu'>
 						<li> <a href="{$rootDir}brands/amb.php"> AMB </a></li>
 						<li> <a href="{$rootDir}brands/waka.php"> Waka Takahashi </a></li>
 					</ul> 
 				</li>
-				<li class="nav_news {$activeNews}"><a href="{$rootDir}news/">NEWS</a></li>
-				<li class="nav_stocklists {$activeStocklists}"><a href="{$rootDir}stocklists/">STOCKLISTS</a></li>
-				<li class="nav_contact {$activeContact}"><a href="mailto:info@highbridge-ny.com">CONTACT</a></li>
+				<li class="nav_news"><a href="{$rootDir}news/">MEDIA</a></li>
+				<li class="nav_stocklists"><a href="{$rootDir}stocklists/">STOCKLISTS</a></li>
+				<li class="nav_contact"><a href="{$rootDir}contact/">CONTACT</a></li>
 			</ul>
 		</div>
 
@@ -156,10 +156,10 @@ function reqEsc( $value )
 $(function(){
     $('.dropdown' ).hover(
         function(){
-            $(this).children('.sub-menu').slideDown(200);
+            $(this).children('.sub-menu').stop(true,true).slideDown(200);
         },
         function(){
-            $(this).children('.sub-menu').slideUp(200);
+            $(this).children('.sub-menu').stop(true,true).slideUp(200);
         }
     );
     // console.log($('.sub-menu li'))
@@ -170,6 +170,18 @@ $(function(){
     // 	// window.location.replace(url);
     // 	// return true;
     // })
+	var url = window.location.href;
+	$("#nav ul a").each(function(){
+		if(url == (this.href)){
+			$(this).closest("li").addClass("active");
+		}
+		console.log(url.indexOf('brands'));
+		if(url.indexOf("brands") >= 0){
+			$('#nav ul .dropdown').addClass("brand-active");
+		}
+	});
+
+
 });
 </script>
 <script>
@@ -195,6 +207,20 @@ $(function(){
 			})
 	}
 	$(function(){
-			enlarge('.image-wrapper img')
+			enlarge('.brand_block .image-wrapper img')
 	});
 </script>
+<?php 
+function createBox( $outerwidth, $outerHeight, $img=null, $msg=null){
+?>	
+	<div style="margin-top:15px; background:#f4f5f7; width:<?=$outerwidth?>; height:<?=$outerHeight?>;padding:15px">
+		<div>
+			<?php $img != null ? '<img src='. $img  .'/>' : ""?>
+		</div>
+		<div style="margin-top:15px;">
+				<?=$msg?>
+		</div>
+	</div>
+<?php
+}
+?>

@@ -71,6 +71,17 @@ EOF;
 //　画面表示処理
 ?>
 <?=getHeaderHtml( $pageTitle, $otherStr );?>
+<? $images = array("img/brands/amb/image01.jpg",
+				"img/brands/amb/image02.jpg",
+				"img/brands/amb/image03.jpg",
+				"img/brands/amb/image04.jpg",
+				"img/brands/amb/image05.jpg",
+				"img/brands/amb/image06.jpg",
+				"img/brands/amb/image07.jpg",
+				"img/brands/amb/image08.jpg",
+				"img/brands/amb/image09.jpg"
+			);
+?>
 <body>
 
 	<?=getGlobalNaviHtml();?>
@@ -79,43 +90,28 @@ EOF;
 	<div class="container">
 		<div class="wrap_brands">
 
-		<div id="amb" class="brand_block amb">
-			<h2>Amb Ambassadors of minimalism</h2>
-			<div class="description">
-<h3>2016 Spring&amp;Summer</h3>
-Amb Ambassadors of minimalism is an original footwear label of Highbridge International, established in 2008.<br /> 
-The collection expands from our classic style sneakers for men’s and women’s. Manufactured in Portugal.<br />
-We focus on “fashionable minimal design”, “quality of material&amp;construction”, “comfort&amp;functionality”.<br />
-WEBSITE : <a href="http://www.amb-tokyo.com" target="_blank">amb-tokyo.com</a>
+			<div id="amb" class="brand_block amb" style="display:none;">
+				<h3>WAKA TAKAHASHI</h3>
+				<p>is a women's handbag brand established in New York City by a Japanese designer with A/W 2016 collection. Each piece is sophisticatedly crafted in Italy</p>
+				<div class='image-container'>
+				<?php 
+					foreach($images as $img){
+						echo '<div class=image-wrapper>' . '<img class=images src='.'http://placehold.it/350x450' .' />' . '</div>';
+					};
+				?>
+				</div>
 			</div>
-			<ul id="brand_amb_slider">
-				<li><img src="<?=ROOT_DIR?>img/brands/amb/image01.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/amb/image02.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/amb/image03.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/amb/image04.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/amb/image05.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/amb/image06.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/amb/image07.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/amb/image08.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/amb/image09.jpg" /></li>
-			</ul>
-		</div>
- 
- 		<div id="waka" class="brand_block waka">
-			<h2>WAKA TAKAHASHI</h2>
-			<div class="description">
-WAKA TAKAHASHI is a women’s handbag brand established in New York City by a Japanese designer with A/W 2016 collection.
-Each piece is sophisticatedly crafted in Italy.<br />
-			</div>
-			<ul id="brand_waka_slider">
-				<li><img src="<?=ROOT_DIR?>img/brands/waka/image01.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/waka/image02.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/waka/image05.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/waka/image06.jpg" /></li>
-				<li><img src="<?=ROOT_DIR?>img/brands/waka/image07.jpg" /></li>
-			</ul>
-		</div>
-
+			<div id="waka" class="brand_block amb" style="display:none;">
+				<h3>WAKA TAKAHASHI</h3>
+				<p>is a women's handbag brand established in New York City by a Japanese designer with A/W 2016 collection. Each piece is sophisticatedly crafted in Italy</p>
+				<div class='image-container'>
+				<?php 
+					foreach($images as $img){
+						echo '<div class=image-wrapper>' . '<img class=images src='.'http://placehold.it/350x450' .' />' . '</div>';
+					};
+				?>
+				</div>
+			</div>				
 		</div><!-- /.wrap -->
 	</div><!-- /.container -->
 
@@ -130,4 +126,19 @@ Each piece is sophisticatedly crafted in Italy.<br />
 //--------------------------------------------------------------------------------------------------
 
 ?>
+
+<script>
+// $(function(){
+// 		var url = window.location.href;
+// 		var urlId = url.match(/#.*/)[0];
+// 		showDiv(urlId);
+// 	$('.sub-menu li a').on('click',function(event){
+// 		var url = window.location.hash;
+// 		showDiv(url);
+//     })
+// });
+// function showDiv(option){
+// 	$(option).toggle();
+// }
+</script>
 

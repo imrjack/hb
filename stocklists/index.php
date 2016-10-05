@@ -43,17 +43,45 @@ EOF;
 //　画面表示処理
 ?>
 <?=getHeaderHtml( $pageTitle, $otherStr );?>
+<? $amb = array("img/brands/amb/image01.jpg",
+				"img/brands/amb/image02.jpg",
+				"img/brands/amb/image03.jpg",
+			);
+	$amb_links = array("Urban Outfitters", "Japan Store", "Korea");
+?>
+<? $waka = array("img/brands/amb/image01.jpg",
+				"img/brands/amb/image02.jpg",
+				"img/brands/amb/image03.jpg",
+			);
+?>
 <body>
 
 	<?=getGlobalNaviHtml();?>
 	</div><!-- #header -->
 
 	<div class="container">
-		<div class="wrap_construction">
-
-			<h2>under construction</h2>
+		<div class="stocklists">
+		<div style="padding-left:20px;">
+			<h1>AMB</h1>
+			<p>Ambassadors of Minimalism</p>
+		</div>
+				<?php 
+					foreach($amb as $img){
+						echo '<div class=image-wrapper>' . '<img class=images src='.'http://placehold.it/350x350' .' />' . '</div>';
+					};
+				?>
 
 		</div><!-- /.wrap -->
+		<div class="stocklists">
+			<div style="padding-left:20px;">
+				<p>Waka Takahashi</p>
+			</div>
+				<?php 
+					foreach($amb as $img){
+						echo '<div class=image-wrapper>' . '<img class=images src='.'http://placehold.it/350x350' .' />' . '</div>';
+					};
+				?>			
+		</div>
 	</div><!-- /.container -->
 
 	<?=getFooterHtml();?> 

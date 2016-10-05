@@ -38,9 +38,18 @@ $rootDir = ROOT_DIR;
 $otherStr = <<< EOF
 EOF;
 
-
-//------------------------------------------------------------------------------
-//　画面表示処理
+function createNewsBox( $outerwidth, $outerHeight, $img, $msg=null){
+	echo '<div style="margin-top:15px; background:#f4f5f7; width:' . $outerwidth . '; height:' . $outerHeight . ';padding:15px">
+			<div>
+				<img src="'.$img.';"/>
+			</div>
+			<div style="margin-top:15px;">
+				<p>
+					'.$msg.'
+				</p>
+			</div>
+			</div>';
+}
 ?>
 <?=getHeaderHtml( $pageTitle, $otherStr );?>
 <body>
@@ -49,11 +58,25 @@ EOF;
 	</div><!-- #header -->
 
 	<div class="container">
-		<div class="wrap_construction">
-
-			<h2>under construction</h2>
-
-		</div><!-- /.wrap -->
+		<section>
+		<div class="left" style="width:27.333%;">
+			<?php createNewsBox("100%", "360px","https://placeimg.com/320/180/nature", 'fasdfas')?>
+			<?php createNewsBox("100%", "360px","https://placeimg.com/320/180/nature", 'fasdfas')?>
+		</div>
+		<div class="right" style="width:69.3333%">
+			<div style="width:85%;">
+				<?php createNewsBox("100%", "360px","https://placeimg.com/320/360/nature", 'fasdfas')?>
+			</div>
+			<div>
+			<div style='width:39.333%;'>
+				<?php createNewsBox("100%", "360px","https://placeimg.com/320/180/nature", 'fasdfas')?>	
+			</div>
+			<div style='width:39.333%;'>
+				<?php createNewsBox("100%", "360px","https://placeimg.com/320/180/nature", 'fasdfas')?>	
+			</div>
+			</div>
+		</div> 
+		</section>
 	</div><!-- /.container -->
 
 	<?=getFooterHtml();?> 

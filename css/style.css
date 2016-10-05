@@ -91,6 +91,7 @@ ul{
 	height:25px;
 	/*margin: 0 auto;*/
 	text-indent: -9999px;
+	margin-top:10px;
 	background: url( ../img/common/logo.png ) no-repeat;
 }
 #header #nav{
