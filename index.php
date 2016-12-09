@@ -77,27 +77,33 @@ EOF;
 ?>
 <?=getHeaderHtml( $pageTitle, $otherStr );?>
 <body onLoad="initializeMap('newyork');initializeMap('tokyo');">
-
-	<div class="container">
 	<?=getGlobalNaviHtml();?>
 	</div>
 	<div class = "top-container">
 		<div class="top-wrap">
 			<div class="top-pic-lg" style="background-image: url('<?=ROOT_DIR?>img/2016/top_img_1.jpg')">
 			</div>
-			<div class="top-pic-sm">
-				<!-- <img width="100%" src="<?=ROOT_DIR?>img/2016/top_img_1.jpg"/> -->
+			<div class="top-pic-sm" style="background-image: url('<?=ROOT_DIR?>img/logo/brand_logo.jpg')">
+				<!-- <img width="100%" src="<?=ROOT_DIR;?>img/logo/Brand-Logo.jpg"/> -->
 			</div>
-			<div class="top-pic-sm">
-				<!-- <img width="100%" src="<?=ROOT_DIR?>img/2016/top_img_1.jpg"/> -->
+			<div class="top-pic-sm top-pic-sm-table">
+				<div style='display:table;'>
+					<div style='display:table-cell; vertical-align: middle;'>
+						<h2>Amb</h2>
+						<p>Ambassadors of Minimalism</p>
+					</div>
+				</div>
+				<!-- <div class='top-amb' style="background-image: url('<?=ROOT_DIR?>img/logo/amb-logo.png')">
+				</div> -->
+				<!-- <img width="100%" src="<?=ROOT_DIR;?>img/logo/amb-logo.png"/> -->
 			</div>
 			<div class="top-pic-lg" style="background-image: url('<?=ROOT_DIR?>img/2016/top_img_2.jpg')">
 				<!-- <img width="100%" src="<?=ROOT_DIR?>img/2016/top_img_1.jpg"/> -->
 			</div>	
 		</div>	
 	</div>
-
 	<?=getFooterHtml();?> 
+
 </body>
 
 

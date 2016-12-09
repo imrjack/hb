@@ -21,8 +21,12 @@ $retStr = <<< EOF
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<link href="{$rootDir}css/reset.css" rel="stylesheet">
 	<link href="{$rootDir}css/style.css" rel="stylesheet">
+	<link href="//assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
 	<link href="{$rootDir}css/new-style.css" rel="stylesheet">	
+	<link href="{$rootDir}css/magnific-popup.css" rel="stylesheet">	
+	<script src="//assets.juicer.io/embed.js" type="text/javascript"></script>
 	<script src="{$rootDir}js/jquery.fademover/jquery.fademover.js"></script>
+	<script src=}{$rootDir}js/jquery.magnific-popup.min.js"></script>
 	{$otherStr}
 
 <script type="text/javascript">
@@ -95,12 +99,11 @@ $rootDir = ROOT_DIR;
 $retStr = <<< EOF
 	<div class='container' id="header">
 		<div id="logo">
-			<a href="{$rootDir}">Highbridge New York Inc.</a>
+			<a href="{$rootDir}"><div class='logo-image'></div></a>
 		</div>	
 
 		<div id="nav">
 			<ul>
-				<li class="nav_collection"><a href="{$topUrl}#about">ABOUT</a></li>
 				<li class="dropdown nav_about">BRANDS
 					<ul class='sub-menu'>
 						<li> <a href="{$rootDir}brands/amb.php"> AMB </a></li>
@@ -108,7 +111,7 @@ $retStr = <<< EOF
 					</ul> 
 				</li>
 				<li class="nav_news"><a href="{$rootDir}news/">MEDIA</a></li>
-				<li class="nav_stocklists"><a href="{$rootDir}stocklists/">STOCKLISTS</a></li>
+				<li class="nav_stocklists"><a href="{$rootDir}stocklists/">STOCKISTS</a></li>
 				<li class="nav_contact"><a href="{$rootDir}contact/">CONTACT</a></li>
 			</ul>
 		</div>
@@ -128,8 +131,8 @@ $retStr = <<< EOF
 		<div id="top_wrapper">
 			<div id="top">
 				<ul>
-					<li class="btn_facebook"><a target="_blank" href="https://www.facebook.com/pages/Highbridge-international-PR/365254633552143">facebook</a></li>
-					<li class="btn_instagram"><a target="_blank" href="http://instagram.com/highbridge_official">instagram</a></li>
+					<li class="btn_facebook"><a target="_blank" href="https://www.facebook.com/pages/Highbridge-international-PR/365254633552143"></a></li>
+					<li class="btn_instagram"><a target="_blank" href="http://instagram.com/highbridge_official"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -188,6 +191,7 @@ $(function(){
 	var $img_open = false;
 	function enlarge(el){
 		$(el).on('click',function(){
+			    var $next_img = $(this).parent().next();
 				$img_open = true
 				var $div = $('<div>',{id:'enlarge_img'});
 				var $closeX = $('<div>',{id:'closeX', a:'#'});
@@ -197,17 +201,22 @@ $(function(){
 				$closeX.appendTo('#enlarge_img');
 				var $img = $(this).clone().appendTo('#enlarge_img');
 				$op.appendTo('body');
-				console.log($img_open)
-		
+				
+				// $('#enlarge_img').on("click",function(){
+				// 	console.log('clicked')
+				// 	$img =  $next_img.children();
+				// 	var $old_img = $(this).children()[1].remove();
+				// 	$img.clone().appendTo($($("#enlarge_img")));
+				// });
+
 				$('#closeX').click(function(){
-					console.log($(this));
 					$(this).parent().remove();
 					$op.remove();
-				})
+				});
 			})
 	}
 	$(function(){
-			enlarge('.brand_block .image-wrapper img')
+		enlarge('.brand_block .image-wrapper img')
 	});
 </script>
 <?php 

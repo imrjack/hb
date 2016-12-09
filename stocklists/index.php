@@ -43,16 +43,17 @@ EOF;
 //　画面表示処理
 ?>
 <?=getHeaderHtml( $pageTitle, $otherStr );?>
-<? $amb = array("img/brands/amb/image01.jpg",
-				"img/brands/amb/image02.jpg",
-				"img/brands/amb/image03.jpg",
+<? $amb = array("img/stocklist/urbanoffitter.jpeg",
+				"img/stocklist/store-2.jpg",
+				"img/stocklist/store-3.jpeg",
 			);
 	$amb_links = array("Urban Outfitters", "Japan Store", "Korea");
 ?>
-<? $waka = array("img/brands/amb/image01.jpg",
-				"img/brands/amb/image02.jpg",
-				"img/brands/amb/image03.jpg",
+<? $waka = array("img/stocklist/store-9.jpg",
+				"img/stocklist/store-7.jpg",
+				"img/stocklist/store-8.jpg",
 			);
+	$waka_links = array("New York Retailer", "Korea Retailer", "Japan Retailer");
 ?>
 <body>
 
@@ -60,25 +61,26 @@ EOF;
 	</div><!-- #header -->
 
 	<div class="container">
-		<div class="stocklists">
-		<div style="padding-left:20px;">
-			<h1>AMB</h1>
-			<p>Ambassadors of Minimalism</p>
+		<div style="padding-left:7px;margin-bottom:10px;margin-left:3px;">
+			<!-- <h2 style='font-size:3em'>AMB</h2>
+			<p style='font-style:italic; font-size: 13px; margin-top:6px'> Ambassadors of Minimalism</p> -->
+			<img width='190px' src="<?= $rootDir; ?>img/logo/amb-logo.jpg"/>
 		</div>
+		<div class="stocklists">
 				<?php 
-					foreach($amb as $img){
-						echo '<div class=image-wrapper>' . '<img class=images src='.'http://placehold.it/350x350' .' />' . '</div>';
-					};
+					foreach($amb as $key=>$value){
+						echo '<div class=image-wrapper>' . '<img class=images src='. $rootDir . $value .' />' . "<div class='stocklist-link'>{$amb_links[$key]}</div></div>";
+					}
 				?>
 
 		</div><!-- /.wrap -->
-		<div class="stocklists">
-			<div style="padding-left:20px;">
-				<p>Waka Takahashi</p>
+			<div style="padding-left:7px; font-size:16px;margin-bottom:10px;margin-left:3px; color:gray;">
+				<p>WAKA TAKAHASHI</p>
 			</div>
+		<div class="stocklists">
 				<?php 
-					foreach($amb as $img){
-						echo '<div class=image-wrapper>' . '<img class=images src='.'http://placehold.it/350x350' .' />' . '</div>';
+					foreach($waka as $key=>$value){
+						echo '<div class=image-wrapper>' . '<img class=images src='. $rootDir . $value .' />' . "<div class='stocklist-link'>{$waka_links[$key]}</div></div>";
 					};
 				?>			
 		</div>
